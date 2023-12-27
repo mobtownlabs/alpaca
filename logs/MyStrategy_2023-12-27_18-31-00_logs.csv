@@ -1,0 +1,66 @@
+2023-12-27 18:31:00,440: root: INFO: MyStrategy : Executing the initialize lifecycle method
+2023-12-27 18:31:01,017: root: INFO: Current backtesting datetime 2023-01-03 08:30:00-05:00
+2023-12-27 18:31:01,018: root: INFO: MyStrategy : Executing the before_market_opens lifecycle method
+2023-12-27 18:31:01,018: root: INFO: Current backtesting datetime 2023-01-03 09:30:00-05:00
+2023-12-27 18:31:01,018: root: INFO: MyStrategy : Executing the before_starting_trading lifecycle method
+2023-12-27 18:31:01,019: root: INFO: [34mMyStrategy : Executing the on_trading_iteration lifecycle method at 2023-12-27 18:31:01[0m
+2023-12-27 18:31:01,019: root: INFO: [32mNew market order of | 0.00001 BTC/USD buy | with status unprocessed was submitted.[0m
+2023-12-27 18:31:01,020: root: INFO: [34mMyStrategy : Trading iteration ended at 2023-12-27 18:31:01[0m
+2023-12-27 18:31:01,020: root: INFO: Getting historical prices for BTC/USD, 1 bars, 
+2023-12-27 18:31:01,020: root: WARNING: quote is not implemented for YahooData, but USD was passed as the quote
+2023-12-27 18:31:01,944: yfinance: ERROR: Failed to get ticker 'BTC/USD' reason: Expecting value: line 1 column 1 (char 0)
+2023-12-27 18:31:01,945: yfinance: ERROR: BTC/USD: No timezone found, symbol may be delisted
+2023-12-27 18:31:03,498: root: ERROR: [Errno 2] No such file or directory: '/Users/bjt/Library/Caches/lumibot/1.0/yahoo/BTC/USD_info.pickle'
+2023-12-27 18:31:03,528: root: ERROR: Traceback (most recent call last):
+  File "/Users/bjt/Library/Python/3.9/lib/python/site-packages/lumibot/strategies/strategy_executor.py", line 829, in run
+    self._run_trading_session()
+  File "/Users/bjt/Library/Python/3.9/lib/python/site-packages/lumibot/strategies/strategy_executor.py", line 783, in _run_trading_session
+    self.broker.process_pending_orders(strategy=self.strategy)
+  File "/Users/bjt/Library/Python/3.9/lib/python/site-packages/lumibot/backtesting/backtesting_broker.py", line 506, in process_pending_orders
+    ohlc = strategy.get_historical_prices(
+  File "/Users/bjt/Library/Python/3.9/lib/python/site-packages/lumibot/strategies/strategy.py", line 2845, in get_historical_prices
+    return self.broker.data_source.get_historical_prices(
+  File "/Users/bjt/Library/Python/3.9/lib/python/site-packages/lumibot/data_sources/data_source.py", line 255, in get_historical_prices
+    response = self._pull_source_symbol_bars(
+  File "/Users/bjt/Library/Python/3.9/lib/python/site-packages/lumibot/data_sources/yahoo_data.py", line 70, in _pull_source_symbol_bars
+    data = YahooHelper.get_symbol_data(
+  File "/Users/bjt/Library/Python/3.9/lib/python/site-packages/lumibot/tools/yahoo_helper.py", line 295, in get_symbol_data
+    return YahooHelper.get_symbol_day_data(
+  File "/Users/bjt/Library/Python/3.9/lib/python/site-packages/lumibot/tools/yahoo_helper.py", line 283, in get_symbol_day_data
+    result = YahooHelper.fetch_symbol_day_data(symbol, caching=caching, last_needed_datetime=last_needed_datetime)
+  File "/Users/bjt/Library/Python/3.9/lib/python/site-packages/lumibot/tools/yahoo_helper.py", line 245, in fetch_symbol_day_data
+    data = YahooHelper.download_symbol_day_data(symbol)
+  File "/Users/bjt/Library/Python/3.9/lib/python/site-packages/lumibot/tools/yahoo_helper.py", line 180, in download_symbol_day_data
+    info = YahooHelper.get_symbol_info(symbol)
+  File "/Users/bjt/Library/Python/3.9/lib/python/site-packages/lumibot/tools/yahoo_helper.py", line 279, in get_symbol_info
+    return YahooHelper.fetch_symbol_info(symbol, caching=caching)
+  File "/Users/bjt/Library/Python/3.9/lib/python/site-packages/lumibot/tools/yahoo_helper.py", line 232, in fetch_symbol_info
+    YahooHelper.dump_pickle_file(symbol, INFO_DATA, data)
+  File "/Users/bjt/Library/Python/3.9/lib/python/site-packages/lumibot/tools/yahoo_helper.py", line 83, in dump_pickle_file
+    with open(pickle_file_path, "wb") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/bjt/Library/Caches/lumibot/1.0/yahoo/BTC/USD_info.pickle'
+
+2023-12-27 18:31:03,528: root: INFO: MyStrategy : Executing the on_bot_crash event method
+2023-12-27 18:31:03,539: root: INFO: Backtesting finished
+2023-12-27 18:31:03,897: root: ERROR: Not enough data to create a tearsheet, at least 2 days of data are required. Skipping
+2023-12-27 18:31:03,898: backtest_stats: INFO: Backtest took 0:00:03.457924 for a speed of 0.000
+2023-12-27 18:31:03,898: root: INFO: MyStrategy : Executing the initialize lifecycle method
+2023-12-27 18:31:04,957: root: INFO: Sleeping until the market opens
+2023-12-27 18:31:05,527: root: INFO: MyStrategy : Executing the before_market_opens lifecycle method
+2023-12-27 18:31:05,897: root: INFO: Sleeping until the market opens
+2023-12-27 18:31:05,898: root: INFO: MyStrategy : Executing the before_starting_trading lifecycle method
+2023-12-27 18:31:06,150: root: INFO: [34mMyStrategy : Strategy will check in again at: 2023-12-27 18:32:00[0m
+2023-12-27 18:32:00,167: root: INFO: [32mNew limit order of | 0.2 BTC/USD sell | at price $43900.0 with status new was submitted.[0m
+2023-12-27 18:32:00,168: root: INFO: [32mNew limit order of | 0.2 BTC/USD sell | at price $43890.0 with status new was submitted.[0m
+2023-12-27 18:32:00,168: root: INFO: [32mNew limit order of | 0.3 BTC/USD sell | at price $43875.0 with status partially_filled was submitted.[0m
+2023-12-27 18:32:00,528: root: INFO: [34mMyStrategy : The market is not currently open, skipping this trading iteration[0m
+2023-12-27 18:32:59,409: root: INFO: limit order of | 0.2 BTC/USD sell | at price $43890.0 with status new was canceled.
+2023-12-27 18:32:59,416: root: INFO: limit order of | 0.2 BTC/USD sell | at price $43900.0 with status new was canceled.
+2023-12-27 18:32:59,422: root: INFO: limit order of | 0.3 BTC/USD sell | at price $43875.0 with status new was canceled.
+2023-12-27 18:33:00,136: root: INFO: [34mMyStrategy : Skipping this iteration because it's not time yet. 9 iterations left before we run again[0m
+2023-12-27 18:33:13,361: root: INFO: Untracked order 9aee890a-5bab-46dd-b626-dbe8458315aa was logged by broker alpaca
+2023-12-27 18:33:13,362: root: INFO: Untracked order 9aee890a-5bab-46dd-b626-dbe8458315aa was logged by broker alpaca
+2023-12-27 18:34:00,150: root: INFO: [34mMyStrategy : Skipping this iteration because it's not time yet. 8 iterations left before we run again[0m
+2023-12-27 18:35:00,148: root: INFO: [34mMyStrategy : Skipping this iteration because it's not time yet. 7 iterations left before we run again[0m
+2023-12-27 18:36:00,130: root: INFO: [34mMyStrategy : Skipping this iteration because it's not time yet. 6 iterations left before we run again[0m
+2023-12-27 18:36:40,360: root: INFO: MyStrategy : Executing the on_abrupt_closing event method

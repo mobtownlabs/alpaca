@@ -1,6 +1,6 @@
 from alpaca.trading.client import TradingClient
 from alpaca.trading.enums import OrderSide, TimeInForce
-from alpaca.trading.requests import MarketOrderRequest
+from alpaca.trading.requests import LimitOrderRequest, MarketOrderRequest
 from alpaca.trading.stream import TradingStream
 import config
 
@@ -10,15 +10,15 @@ client = TradingClient(config.API_KEY, config.SECRET_KEY, paper=False)
 
 account = dict(client.get_account())
 
-for k,v in account.items():
-    print(f"{k:30}: {v}")
+#for k,v in account.items():
+#    print(f"{k:30}: {v}")
 
 
-order_details = MarketOrderRequest(
+order_details = LimitOrderRequest(
     symbol = "BTC/USD",
-    qty = 0.0001,
-    side = OrderSide.BUY,
-    type = "market",
+    qty = 0.00009975,
+    side = OrderSide.SELL,
+    limit_price = 43110.00,
     time_in_force = "gtc"
 )
 
