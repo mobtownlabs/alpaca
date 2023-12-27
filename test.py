@@ -16,8 +16,8 @@ for k,v in account.items():
 
 order_details = MarketOrderRequest(
     symbol = "BTC/USD",
-    qty = 0.0000995,
-    side = OrderSide.SELL,
+    qty = 0.0001,
+    side = OrderSide.BUY,
     type = "market",
     time_in_force = "gtc"
 )
@@ -40,6 +40,5 @@ for position in positions:
     
 client.close_all_positions(cancel_orders=True)
 
-exit()
-
+trades.close()
 
