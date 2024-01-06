@@ -11,13 +11,13 @@ class MyStrategy(Strategy):
     # Custom parameters
     parameters = {
         "symbol": "BTC/USD",
-        "quantity": 0.00001,
+        "quantity": ,
         "side": "buy"
     }
 
     def initialize(self, symbol=""):
-        # Will make on_trading_iteration() run every 10 minutes
-        self.sleeptime = "10M"
+        # Will make on_trading_iteration() run every 180 minutes
+        self.sleeptime = "180M"
 
     def on_trading_iteration(self):
         symbol = self.parameters["symbol"]
@@ -45,10 +45,10 @@ strategy.backtest(
     backtesting_end,
     # You can also pass in parameters to the backtesting class, this will override the parameters in the strategy
     parameters= {
-        "symbol": "BTC/USD"
+        "symbol": "BTC-USD"
     },
 )
 
 # Run the strategy live
-trader.add_strategy(strategy)
-trader.run_all()
+#trader.add_strategy(strategy)
+#trader.run_all()
