@@ -5,7 +5,7 @@ from alpaca.trading.stream import TradingStream
 import config
 
 
-client = TradingClient(config.API_KEY, config.SECRET_KEY, paper=False)
+client = TradingClient(config.API_KEY, config.SECRET_KEY, paper=True)
 
 
 account = dict(client.get_account())
@@ -24,7 +24,7 @@ order_details = LimitOrderRequest(
 
 order = client.submit_order(order_details)
 
-trades = TradingStream(config.API_KEY, config.SECRET_KEY, paper=False)  
+trades = TradingStream(config.API_KEY, config.SECRET_KEY, paper=True)  
 
 async def trade_status(data):
     print(data)
